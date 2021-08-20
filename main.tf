@@ -100,6 +100,10 @@ resource "azurerm_public_ip" "catapp-pip" {
   resource_group_name = azurerm_resource_group.myresourcegroup.name
   allocation_method   = "Dynamic"
   domain_name_label   = "${var.prefix}-meow"
+  tags  = {
+    Department = "devops"
+  }
+
 }
 
 resource "azurerm_virtual_machine" "catapp" {
